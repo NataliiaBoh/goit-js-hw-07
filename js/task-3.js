@@ -3,15 +3,15 @@
  *  як ім’я для привітання. Обов’язково очищай значення в інпуті по 
  * краях від пробілів . Якщо інпут порожній або містить лише пробіли, 
  * то замість імені у спан має підставлятися рядок "Anonymous". */
-let inputEl = document.querySelector("#name-input");
-let spanEl = document.querySelector("#name-output");
+const inputEl = document.querySelector("#name-input");
+const spanEl = document.querySelector("#name-output");
 
 inputEl.addEventListener("input", handleInput)
 
 function handleInput(event) {
         let value = event.currentTarget.value.trim();
-         value === '' ?
-        spanEl.textContent = 'Anonymous': spanEl.textContent = value;
+         spanEl.textContent = value === '' ?
+        'Anonymous' :  value;
     } 
 
     

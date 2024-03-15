@@ -16,16 +16,15 @@ form.addEventListener("submit", handleSubmit);
 function handleSubmit(event) {
     event.preventDefault();
     const { email, password } = event.target.elements;
-    const info = {
+    
+    if (email.value === `` || password.value === ``) {
+        alert("All form fields must be filled in")
+    } else {
+        const info = {
         email: email.value.trim(),
         password: password.value.trim()
     }
-    if (email.value === `` || password.value === ``) {
-        alert `All form fields must be filled in`
-    } else {
         console.log(info);
+        event.target.reset();
     }
-
-
-    event.target.reset();
 }

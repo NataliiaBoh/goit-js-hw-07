@@ -30,17 +30,15 @@ const images = [
 
 const list = document.querySelector(`.gallery`);
 
+const createGallery = images
+  .map(image =>
+    `<li class="list-item"><img src = "${image.url}" alt = "${image.alt}" class="list-img" width = "360"  /></li>`)
+  .join("");
 
-images.forEach((el, i) => {
-  if(i >= 3) {
-   list.insertAdjacentHTML(
-    'afterbegin',
-    `<li><img src = "${el.url}" alt = "${el.alt}"  width = "150" height = "100" /></li>`,
-  );
-  }
- 
-});
+  list.insertAdjacentHTML("beforeend", createGallery)
+
+
 
 list.style.display = "flex";
 list.style.flexWrap = "wrap";
-list.style.justifyContent = "space-around";
+list.style.gap = "50px";

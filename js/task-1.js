@@ -5,7 +5,7 @@ const items = document.querySelectorAll('li.item');
     });
     function showCategoryInfo(category) {
         let categoryTitle = category.querySelector('h2').textContent;
-        let categoryElementsCount = category.querySelectorAll('li').length;
+        let categoryElementsCount = category.querySelectorAll('ul li').length;
         console.log(`category: ${categoryTitle}`);
         console.log(`elements: ${categoryElementsCount}`);
     }
